@@ -19,6 +19,7 @@
     <string name="subject">Subject:</string>
     <string name="submit">submit</string>
     <string name="emailName">Email</string>
+    <string name="message">Message:</string>
 
 
     <string-array name="data_structures_array">
