@@ -188,8 +188,18 @@
         app:layout_constraintStart_toStartOf="@+id/recieverOfText"
         app:layout_constraintTop_toBottomOf="@+id/recieverOfText" />
 
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="@string/message"
+        app:layout_constraintStart_toStartOf="@+id/whatsItAbout"
+        app:layout_constraintTop_toBottomOf="@+id/whatsItAbout" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
+        android:onClick="buttonClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/submit"
