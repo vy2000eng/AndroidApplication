@@ -180,32 +180,37 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginBottom="5dp"
         android:text="@string/result"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         app:layout_constraintBottom_toTopOf="@+id/recieverOfText"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/complexity"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonGroup"
+        />
 
     <TextView
         android:id="@+id/recieverOfText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="1dp"
         android:text="@string/receiver"
-        app:layout_constraintBottom_toTopOf="@+id/whatsItAbout"
-        app:layout_constraintStart_toStartOf="@+id/whatsItAbout" />
+
+        app:layout_constraintStart_toStartOf="@+id/result"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        />
 
     <TextView
         android:id="@+id/whatsItAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="47dp"
-        android:layout_marginBottom="7dp"
         android:text="@string/subject"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/recieverOfText"
+        app:layout_constraintTop_toBottomOf="@+id/recieverOfText"
+
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
