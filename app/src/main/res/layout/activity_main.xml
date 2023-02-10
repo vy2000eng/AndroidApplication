@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_column="1"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whatsItFor"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/hintForEmailAddress"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:autofillHints=""
+        android:baselineAligned="false"
+        android:hint="@string/subjectForEmail"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/complexity"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+
+    <TextView
+        android:id="@+id/complexity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complexity"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+
+    <TextView
+        android:id="@+id/dataStructure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/dataStructure"
+        app:layout_constraintBottom_toTopOf="@+id/dataStructureSpinner"
+        app:layout_constraintEnd_toEndOf="@+id/complexity" />
+
+    <Spinner
+        android:id="@+id/dataStructureSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:contentDescription="@string/descriptionOfSpinner"
+
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/complexity"
+        app:layout_constraintTop_toBottomOf="@+id/complexity" />
+
+    <TextView
+        android:id="@+id/dataStructureOperations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dataStructureOperations"
+        app:layout_constraintStart_toStartOf="@+id/dataStructureSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/dataStructureSpinner" />
+
+
+    <CheckBox
+        android:id="@+id/getMinCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:paddingHorizontal="20dp"
+        android:text="@string/getMinOp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/insertCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/dataStructureOperations" />
+
+    <CheckBox
+        android:id="@+id/insertCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:paddingHorizontal="20dp"
+        android:text="@string/insertOp"
+        app:layout_constraintStart_toEndOf="@+id/getMinCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/dataStructureSpinner" />
+
+    <CheckBox
+        android:id="@+id/searchCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+
+        android:text="@string/searchOp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/insertCheckBox"
+        app:layout_constraintStart_toEndOf="@+id/insertCheckBox" />
+
+
+    <TextView
+        android:id="@+id/opCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whichCase"
+        app:layout_constraintStart_toStartOf="@+id/result"
+        app:layout_constraintTop_toBottomOf="@+id/getMinCheckBox" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/opCase"
+        app:layout_constraintTop_toBottomOf="@+id/opCase"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal"
+        android:checkedButton="@id/averageCaseRB"
+        >
+        <RadioButton
+            android:id="@+id/averageCaseRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/averageCase"
+            android:paddingHorizontal="20dp"
+            >
+
+
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/WorstCaseRB"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/worstCase"
+            android:paddingHorizontal="20dp"
+            >
+
+        </RadioButton>
+
+
+    </RadioGroup>
+
+
+
+
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:text="@string/result"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opCase" />
+
+    <TextView
+        android:id="@+id/recieverOfText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="@string/receiver"
+        app:layout_constraintStart_toStartOf="@+id/result"
+        app:layout_constraintTop_toTopOf="@+id/result" />
+
+    <TextView
+        android:id="@+id/whatsItAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="@string/subject"
+        app:layout_constraintStart_toStartOf="@+id/recieverOfText"
+        app:layout_constraintTop_toBottomOf="@+id/recieverOfText" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/submit"
+        android:src="@drawable/baseline_email_24"
+        app:backgroundTint="#FF6122"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

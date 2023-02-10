@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Assignment2</string>
+    <string name="hintForEmailAddress">Email Address</string>
+    <string name="subjectForEmail">Email Subject</string>
+    <string name="whatsItFor">Email</string>
+    <string name="complexity">Complexity</string>
+    <string name="dataStructure">Data Structure</string>
+    <string name="dataStructureOperations">Operations</string>
+
+    <string name="descriptionOfSpinner">Spinner where you can select data structure</string>
+    <string name="getMinOp">get min</string>
+    <string name="insertOp">insert</string>
+    <string name="searchOp">search</string>
+    <string name="worstCase">Worst Case</string>
+    <string name="averageCase">Average Case</string>
+    <string name="whichCase">case</string>
+    <string name="result">Result</string>
+    <string name="receiver">To:</string>
+    <string name="subject">Subject:</string>
+    <string name="submit">submit</string>
+    <string name="emailName">Email</string>
+
+
+    <string-array name="data_structures_array">
+        <item> 2–3 Tree</item>
+        <item> Binary Search Tree</item>
+        <item>Hash Table</item>
+        <item>Linked List</item>
+        <item>Min Heap</item>
+    </string-array>
+
+
+</resources>
