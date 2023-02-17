@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.assignment2.MainActivity">
+
+    <item
+
+        android:id="@+id/menu_save"
+        android:icon="@drawable/edit_pencil_icon"
+        android:title="@string/edit"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/kebab"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="@string/kebab" />
+
+
+</menu>

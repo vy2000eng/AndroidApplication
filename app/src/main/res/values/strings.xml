@@ -20,6 +20,9 @@
     <string name="submit">submit</string>
     <string name="emailName">Email</string>
     <string name="message">Message:</string>
+    <string name="edit">edit</string>
+    <string name="todo">TODO</string>
+    <string name="kebab">kebab</string>
 
 
     <string-array name="data_structures_array">

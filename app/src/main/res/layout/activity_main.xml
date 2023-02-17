@@ -7,7 +7,19 @@
     android:layout_height="match_parent"
     android:layout_column="1"
     android:padding="10dp"
-    >
+   >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -15,8 +27,8 @@
         android:layout_height="wrap_content"
         android:text="@string/whatsItFor"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -123,41 +135,38 @@
         android:text="@string/whichCase"
         app:layout_constraintStart_toStartOf="@+id/result"
         app:layout_constraintTop_toBottomOf="@+id/getMinCheckBox" />
+
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/opCase"
-        app:layout_constraintTop_toBottomOf="@+id/opCase"
         android:layout_marginStart="20dp"
-        android:orientation="horizontal"
         android:checkedButton="@id/averageCaseRB"
-        >
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/opCase"
+        app:layout_constraintTop_toBottomOf="@+id/opCase">
+
         <RadioButton
             android:id="@+id/averageCaseRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/averageCase"
             android:paddingHorizontal="20dp"
-            >
+            android:text="@string/averageCase">
 
 
         </RadioButton>
+
         <RadioButton
             android:id="@+id/WorstCaseRB"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/worstCase"
             android:paddingHorizontal="20dp"
-            >
+            android:text="@string/worstCase">
 
         </RadioButton>
 
 
     </RadioGroup>
-
-
-
 
 
     <TextView
@@ -197,16 +206,7 @@
         app:layout_constraintStart_toStartOf="@+id/whatsItAbout"
         app:layout_constraintTop_toBottomOf="@+id/whatsItAbout" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:onClick="buttonClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/submit"
-        android:src="@drawable/baseline_email_24"
-        app:backgroundTint="#FF6122"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
