@@ -2,6 +2,8 @@ package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     int whichArray = 0;
     int whichDataStructure = -1;
     private static final int CLICKED_ICON = R.drawable.email_icon;
-    boolean checkToSendEmail = false;
+    private static final int ORIGINAL_ICON = R.drawable.edit_pencil_icon;
+     boolean checkToSendEmail = false;
 
     String[][] worstCaseArray = {
             {"Get Min: O(log(n))", "Insert: O(log(n))", "Search: O(log(n))"},//2-3 tree
@@ -66,11 +69,33 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_activity, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_save);
-         menuItem.setOnMenuItemClickListener(item -> {
-            checkToSendEmail = true;
+        menuItem.setOnMenuItemClickListener(item -> {
+            Log.d("SEND EMAIL", String.valueOf(checkToSendEmail));
+            //checkToSendEmail = true;
+            if(checkToSendEmail){
+                EditText EmailAddress = findViewById(R.id.editTextTextEmailAddress2);
+                EditText SubjectOfEmailAddress = findViewById(R.id.editTextTextEmailAddress3);
+                String subject = String.valueOf(SubjectOfEmailAddress.getText());
+                String email = EmailAddress.getText().toString();
+                Log.d("EMAIL", email);
+                String content = buttonClick(item.getActionView());
 
-            menuItem.setIcon(CLICKED_ICON);
-            buttonClick(item.getActionView());
+                checkToSendEmail = false;
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT,subject );
+                emailIntent.putExtra(Intent.EXTRA_TEXT, content);
+                startActivity(emailIntent);
+                menuItem.setIcon(ORIGINAL_ICON);
+            }
+            else{
+                checkToSendEmail = true;
+                Log.d("SEND EMAIL", String.valueOf(checkToSendEmail));
+
+                menuItem.setIcon(CLICKED_ICON);
+                buttonClick(item.getActionView());
+            }
             return true;
         });
 
@@ -79,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void buttonClick(View Button) {
+    public String buttonClick(View Button) {
         EditText EmailAddress = findViewById(R.id.editTextTextEmailAddress2);
         EditText SubjectOfEmailAddress = findViewById(R.id.editTextTextEmailAddress3);
         Spinner dataStructure = findViewById(R.id.dataStructureSpinner);
@@ -125,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
         setContentOfEmailAddress.setText(contentOfEmailAddress);
         setContentOfSubjectOfEmailAddress.setText(contentOfSubjectOfEmailAddress);
         setContentOfDataStructure.setText(contentOfMessage);
+        return contentOfMessage;
 
     }
 
