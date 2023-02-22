@@ -9,7 +9,7 @@
         android:id="@+id/menu_save"
         android:icon="@drawable/edit_pencil_icon"
         android:title="@string/edit"
-        app:showAsAction="ifRoom|withText" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_settings"
         android:icon="@drawable/kebab"

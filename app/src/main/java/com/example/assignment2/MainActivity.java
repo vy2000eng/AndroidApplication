@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("EMAIL", email);
                 String content = buttonClick(item.getActionView());
 
-                checkToSendEmail = false;
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                 emailIntent.setData(Uri.parse("mailto:"));
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT,subject );
                 emailIntent.putExtra(Intent.EXTRA_TEXT, content);
                 startActivity(emailIntent);
+                checkToSendEmail = false;
                 menuItem.setIcon(ORIGINAL_ICON);
             }
             else{
